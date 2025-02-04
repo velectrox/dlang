@@ -1,0 +1,3 @@
+[submodule "lispy"]
+	path = lispy
+	url = git@github.com:velectrox/lispy.git

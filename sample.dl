@@ -1,0 +1,53 @@
+
+(setq test1 1)
+(setq test2 2)
+
+(defun print (a)
+    (printf "NUM: %d\n" a)
+)
+
+(defun fact (n)
+       (print n)
+       (if (= n 1)
+       	   1
+    	   (* n (fact (- n 1)))
+       )
+)
+
+(defun seq (n)
+  (if (= n 0)
+      '()
+  (cons n (seq (- n 1))))
+)
+
+
+(setq list '(1 2 3 4 5))
+(setf (car list) 0)
+list
+
+(print test1)
+(seq 10)
+(defun inc-each (l)
+       (if (= (car l) nil)
+       	   '()
+	   (cons (+ 1 (car l)) (inc-each (cdr l)))
+       )
+)
+
+(if (= (car '()) nil)
+    (printf "si %d\n" 1)
+    (printf "no %d\n" 0)
+)
+
+
+(defun mapcar (f l)
+       (if (= (car l) nil)
+       	   '()
+	   (cons (f (car l)) (mapcar 'f (cdr l)))
+       )
+)
+
+
+(inc-each '(6 1 1 2 5))
+
+(mapcar (lambda (n) (+ n 100)) '(1 2 3 4 1 2 4 1 0))
